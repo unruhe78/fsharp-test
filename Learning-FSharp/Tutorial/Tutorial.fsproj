@@ -5,14 +5,15 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>32839082-3621-4f11-a0bf-dda602ca52c7</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <RootNamespace>FSX.Lib</RootNamespace>
-    <AssemblyName>FSX.Lib</AssemblyName>
+    <ProjectGuid>37322520-8554-46f1-9842-2f44dd499546</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>Tutorial</RootNamespace>
+    <AssemblyName>Tutorial</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <TargetFSharpCoreVersion>4.4.1.0</TargetFSharpCoreVersion>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
-    <Name>FSX.Lib</Name>
+    <Name>Tutorial</Name>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -22,7 +23,9 @@
     <OutputPath>bin\$(Configuration)\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <WarningLevel>3</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DocumentationFile>bin\$(Configuration)\$(AssemblyName).XML</DocumentationFile>
+    <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -31,7 +34,9 @@
     <OutputPath>bin\$(Configuration)\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <WarningLevel>3</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DocumentationFile>bin\$(Configuration)\$(AssemblyName).XML</DocumentationFile>
+    <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup>
     <MinimumVisualStudioVersion Condition="'$(MinimumVisualStudioVersion)' == ''">11</MinimumVisualStudioVersion>
@@ -50,11 +55,29 @@
   </Choose>
   <Import Project="$(FSharpTargetsPath)" />
   <ItemGroup>
-    <Compile Include="AssemblyInfo.fs" />
-    <None Include="Script.fsx" />
+    <Compile Include="Tutorial.fsx" />
     <Content Include="packages.config" />
-    <Compile Include="Quicksort.fs" />
-    <Compile Include="Squares.fs" />
+    <None Include="03a_IntegersAndNumbers.fsx" />
+    <None Include="01_Immutability.fsx" />
+    <None Include="03b_Booleans.fsx" />
+    <None Include="03c_Strings.fsx" />
+    <None Include="02a_BasicFunctions.fsx" />
+    <None Include="04_Tuples.fsx" />
+    <None Include="05_PipelinesAndComposition.fsx" />
+    <None Include="06a_Lists.fsx" />
+    <None Include="06b_Arrays.fsx" />
+    <None Include="06c_Sequences.fsx" />
+    <None Include="02b_RecursiveFunctions.fsx" />
+    <None Include="07a_Records.fsx" />
+    <None Include="07b_DiscriminatedUnions.fsx" />
+    <None Include="08_PatternMatching.fsx" />
+    <None Include="09_OptionalTypes.fsx" />
+    <None Include="10_UnitsOfMeasure.fsx" />
+    <None Include="11a_Classes.fsx" />
+    <None Include="11b_GenericClasses.fsx" />
+    <None Include="11c_Interfaces.fsx" />
+    <None Include="12_ParallelArrayProgramming.fsx" />
+    <None Include="13_Events.fsx" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="mscorlib" />
@@ -66,9 +89,11 @@
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Numerics" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.ValueTuple">
       <HintPath>..\packages\System.ValueTuple.4.3.0\lib\netstandard1.0\System.ValueTuple.dll</HintPath>
     </Reference>
+    <Reference Include="System.Windows.Forms" />
   </ItemGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
