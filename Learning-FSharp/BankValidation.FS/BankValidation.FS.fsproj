@@ -5,15 +5,14 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>37322520-8554-46f1-9842-2f44dd499546</ProjectGuid>
-    <OutputType>Exe</OutputType>
-    <RootNamespace>Tutorial</RootNamespace>
-    <AssemblyName>Tutorial</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <ProjectGuid>c12c9e40-4702-4949-be12-35b2f7441169</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>BankValidation.FS</RootNamespace>
+    <AssemblyName>BankValidation.FS</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <TargetFSharpCoreVersion>4.4.1.0</TargetFSharpCoreVersion>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
-    <Name>Tutorial</Name>
+    <Name>BankValidation.FS</Name>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -23,9 +22,7 @@
     <OutputPath>bin\$(Configuration)\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <WarningLevel>3</WarningLevel>
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DocumentationFile>bin\$(Configuration)\$(AssemblyName).XML</DocumentationFile>
-    <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -34,9 +31,7 @@
     <OutputPath>bin\$(Configuration)\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <WarningLevel>3</WarningLevel>
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DocumentationFile>bin\$(Configuration)\$(AssemblyName).XML</DocumentationFile>
-    <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup>
     <MinimumVisualStudioVersion Condition="'$(MinimumVisualStudioVersion)' == ''">11</MinimumVisualStudioVersion>
@@ -55,29 +50,16 @@
   </Choose>
   <Import Project="$(FSharpTargetsPath)" />
   <ItemGroup>
-    <Compile Include="Tutorial.fsx" />
+    <Compile Include="AssemblyInfo.fs" />
+    <Compile Include="Module_BankCodeListReader.fs" />
+    <Compile Include="Type_BankInfoReader.fs" />
+    <Compile Include="Module_Helpers.fs" />
+    <Compile Include="Module_Account.fs" />
+    <Compile Include="Module_Validation.fs" />
+    <Compile Include="Module_AccountValidator.fs" />
+    <Compile Include="Module_IBANValidator.fs" />
+    <Compile Include="Type_Validator.fs" />
     <Content Include="packages.config" />
-    <None Include="01_Immutability.fsx" />
-    <None Include="02a_BasicFunctions.fsx" />
-    <None Include="02b_RecursiveFunctions.fsx" />
-    <None Include="03a_IntegersAndNumbers.fsx" />
-    <None Include="03b_Booleans.fsx" />
-    <None Include="03c_Strings.fsx" />
-    <None Include="04_Tuples.fsx" />
-    <None Include="05_PipelinesAndComposition.fsx" />
-    <None Include="06a_Lists.fsx" />
-    <None Include="06b_Arrays.fsx" />
-    <None Include="06c_Sequences.fsx" />
-    <None Include="07a_Records.fsx" />
-    <None Include="07b_DiscriminatedUnions.fsx" />
-    <None Include="08_PatternMatching.fsx" />
-    <None Include="09_OptionalTypes.fsx" />
-    <None Include="10_UnitsOfMeasure.fsx" />
-    <None Include="11a_Classes.fsx" />
-    <None Include="11b_GenericClasses.fsx" />
-    <None Include="11c_Interfaces.fsx" />
-    <None Include="12_ParallelArrayProgramming.fsx" />
-    <None Include="13_Events.fsx" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="mscorlib" />
@@ -89,11 +71,16 @@
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Numerics" />
-    <Reference Include="System.Drawing" />
     <Reference Include="System.ValueTuple">
       <HintPath>..\packages\System.ValueTuple.4.3.0\lib\netstandard1.0\System.ValueTuple.dll</HintPath>
     </Reference>
-    <Reference Include="System.Windows.Forms" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BankValidation.Contracts\BankValidation.Contracts.csproj">
+      <Name>BankValidation.Contracts</Name>
+      <Project>{58c7ad8e-da29-4ae7-a57f-fe21f97a6b27}</Project>
+      <Private>True</Private>
+    </ProjectReference>
   </ItemGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
