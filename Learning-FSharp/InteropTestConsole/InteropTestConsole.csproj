@@ -33,6 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="FSharp.Core, Version=4.4.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -43,6 +44,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DomainModel_FS.cs" />
+    <Compile Include="PaymentMethod_CS.cs" />
+    <Compile Include="PaymentMethod_FS.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -60,6 +64,18 @@
     <ProjectReference Include="..\BankValidation.FS\BankValidation.FS.fsproj">
       <Project>{c12c9e40-4702-4949-be12-35b2f7441169}</Project>
       <Name>BankValidation.FS</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Commons.Portable\Commons.Portable.fsproj">
+      <Project>{919325a8-65ab-4545-968e-d0740f1610ca}</Project>
+      <Name>Commons.Portable</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CS_DDD\CS_DDD.csproj">
+      <Project>{fd7a2cf3-4f9c-45d9-8d1f-6ea7abfc5671}</Project>
+      <Name>CS_DDD</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FS_DDD\FS_DDD.fsproj">
+      <Project>{f774a045-9542-4ed5-bae0-72afdfc7e6e3}</Project>
+      <Name>FS_DDD</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
