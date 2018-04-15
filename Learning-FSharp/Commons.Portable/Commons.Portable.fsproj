@@ -45,7 +45,9 @@
   <ItemGroup>
     <Compile Include="AssemblyInfo.fs" />
     <Compile Include="OperationResult.fs" />
-    <None Include="Script.fsx" />
+    <Compile Include="Convert.fs" />
+    <Compile Include="Parsers.fs" />
+    <None Include="ParserTesting.fsx" />
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
