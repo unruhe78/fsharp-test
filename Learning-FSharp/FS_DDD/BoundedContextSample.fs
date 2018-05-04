@@ -34,5 +34,5 @@ module CardGame =
    x * y  = PAIR     -> set one of each type (aka Tuple)
    x -> y = FUNCTION -> pass X as input into the function and Y will be returned as output
 
-   Question: Do you thinnk a non-programmer could understand this?
+   Question: Do you think a non-programmer could understand this?
 *)
