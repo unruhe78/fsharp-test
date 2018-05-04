@@ -96,7 +96,7 @@ module DomainModelConsideringConstrainedValues =
 
     let createEmailAddress email =
         match createString50 email with
-        | Some email50 -> if Regex.IsMatch(email, @"^\S+@\s+\.\S+$")
+        | Some email50 -> if Regex.IsMatch(email, @"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$")
                           then Some  (EmailAddress email50)
                           else None
         | None         -> None
@@ -104,7 +104,7 @@ module DomainModelConsideringConstrainedValues =
 
 (*
     Question 3: Which fields are linked?
-    Answer:     (FirstName, MiddleInitial, LastName) + (EmailAddress, IsEmailVerified)
+    Answer:     (FirstName, MiddleInitial, LastName) + (Street, HouseNo, ZipCode, City, Country) + (EmailAddress, IsEmailVerified)
     --> Create special types to cluster linked fields
 *)
 
